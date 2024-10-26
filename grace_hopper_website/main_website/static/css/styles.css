@@ -1,0 +1,49 @@
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@400;700&display=swap');
+ 
+body {
+    font-family: 'Josefin Sans', sans-serif;
+}
+.section1_main {
+    background-color: black;
+    position: relative;
+}
+
+.nav-menu {
+    padding-top: 3%;
+    padding-left: 3%;
+    padding-right: 5%;
+    display: none;
+    z-index: 1;
+    box-shadow: 0px 0px 30px 15px rgba(255, 255, 255, 0.2);
+    
+    
+
+}
+
+.nav-menu h2{
+    font-size: 3em;
+    font-weight: bolder;
+}
+
+.nav-menu ul {
+    
+    padding: 0;
+    margin-top: 10%;  
+}
+.nav-menu ul li{
+    font-size: 2em;
+    margin-right: 5%;
+    margin-left: 10%;
+    margin-top: 2%;
+    margin-bottom: 2%;
+    list-style: none;
+     
+    width: 100%;
+}
+
+#openCloseNavBarText {
+    color: rgb(255, 255, 255);
+    font-size: 2.1rem;
+    z-index: 5;
+    font-weight: bolder;
+}
