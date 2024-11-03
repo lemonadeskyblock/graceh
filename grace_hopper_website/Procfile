@@ -1,1 +1,2 @@
-web gunicorn pypackage.wsgi: application --log-file -
+web: gunicorn pypackage.wsgi:application --log-level debug --log-file -
+
