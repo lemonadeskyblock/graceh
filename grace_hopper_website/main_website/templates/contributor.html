@@ -1,0 +1,131 @@
+{% extends "skeleton.html" %}
+{% load static %}
+
+{% block content %}
+<section id="section2_main" style="height: 100vh; position: relative;">
+    <div id="image_bacground_section2">
+        <img id="imggrace" src="{% static 'img/GRACEhopper_long.jpg' %}" alt="Grace Hopper Working">
+    </div>
+    <div style="position: absolute;">
+        <h1 id="textTitle" style="position: relative; z-index:3">CONTRIBUTIONS 
+            <svg id ='toggleSection2' width="100px" height="100px" viewBox="0 0 24 24" style="filter: drop-shadow(4px 4px 4px rgba(0, 0, 0, 0.8));" xmlns="http://www.w3.org/2000/svg">
+             
+            <path fill-rule="evenodd" clip-rule="evenodd" d="M12.7071 14.7071C12.3166 15.0976 11.6834 15.0976 11.2929 14.7071L6.29289 9.70711C5.90237 9.31658 5.90237 8.68342 6.29289 8.29289C6.68342 7.90237 7.31658 7.90237 7.70711 8.29289L12 12.5858L16.2929 8.29289C16.6834 7.90237 17.3166 7.90237 17.7071 8.29289C18.0976 8.68342 18.0976 9.31658 17.7071 9.70711L12.7071 14.7071Z" fill="#ffffff"/>
+            </svg>
+        </h1>
+       <!-- Uploaded to: SVG Repo, www.svgrepo.com, Generator: SVG Repo Mixer Tools https://www.svgrepo.com/svg/509905/dropdown-arrow -->
+       
+        
+        
+        <!--https://assets.arlingtonmagazine.com/2024/05/9-30_back-story.jpg-->
+        <div class="glasscontainer textcontainer" id='2TextCont' style="margin-bottom: 5vh;  z-index:1; position: relative; height: 30%; display:none;">
+            <p> Grace Hopper was a programming pioneer. She developed the idea of automatic programming and ways of using the computer to code. In 1952, she created a machine known as a compiler called A-0 that could translate mathematical code into machine-readable code. This was a huge breakthrough in computational thinking. Without this innovation, we wouldn’t have access to the computers we have today.
+
+            </p>
+
+        </div>
+
+    </div>
+    
+    <div class="container-fluid">
+        
+        <div class="row m-5" style="height: 5vh">
+
+        </div>
+        <div class="row">
+            <div class="col-md-1"></div>
+            <div>
+                
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="sectionmain_3" style="overflow:hidden; height: 100vh; position: relative; background-color: rgb(255, 255, 255);">
+    <div id="rectanglecover" style="opacity: 1; z-index:0; position:absolute;  top:0; background-color: rgb(0, 0, 0); height: 100%; "></div>
+    <div class="container-fluid" >
+        <h1 style="text-align: center; margin-top: 10%; position:relative">
+            UNDERREPRESENTATION
+        </h1>
+        <row class="m-5">
+            <div style="margin-left: 5vw; margin-right: 5vw;">
+                <p id="text3" style="color:rgb(255, 255, 255); font-size: 2rem;  position:relative; z-index:2; text-align: center;">
+                    Grace Hopper faced significant underrepresentation in the tech field mainly due to gender bias. During her time, society often viewed women as less capable in science and technology, leading to their ideas being dismissed or overlooked. Despite her groundbreaking contributions, such as creating the first compiler, many saw her work as unimportant simply because she was a woman. Her innovative approach—using words instead of symbols in programming—was doubted by many. Still, Hopper persevered and proved that her ideas were valuable, showing the strength and brilliance women can bring to the tech world.</p>
+            </div>
+        </row>
+    </div>
+    <div id="endsection3" style="position: absolute;   bottom: 10; border: solid;"></div>
+     
+    
+    
+
+</section>
+<section style="height:50vh; margin-top: 10vh;">
+    <h1 style="text-align: center;">FUTURE PROMISE</h1>
+    <div style="overflow: hidden; overflow: hidden; ">
+        <h2 id="promise" style="width: fit-content; white-space: nowrap;">
+            We believe that the future of computer science is continuously growing. Many of Hopper's contributions to technology have already been utilized, but they will continue to be referenced by computer scientists in the future 
+        </h2>
+    </div>
+
+</section>
+<section>
+    <div class ='container-fluid m-5'>
+        <h1>
+            SELECTION
+        </h1>
+        <div style="margin-left:5vw; margin-right: 5vw;">
+            <p style="font-size: 1.5em;">
+                We first began our selection by naming underrepresented and influential people we did our research on for our assignment. Among them were: Ruzena Bajcsy, Mary Kenneth, Joy Buolamwini, Manuela Veloso and Jennifer Widow. However, during the lecture we talked about Grace Hopper, and we all agreed that her contributions were especially remarkable in modern technology, as she helped develop the creation of high-level languages without the need of hand-coding. For that reason, we chose Grace Hopper because having created the first computer compiler, her contribution to today’s technology was groundbreaking and crucial for translating written code into machine-readable language that would save a lot of resources for times to come. Machines were now able to respond to written words additional to numbers with increasing speed, increased code readability and evolved the standard of languages used in important technological areas. Worked Cited Boomer, Lee. “Life Story: Grace Brewster Murray Hopper, 1906-1992.” Women & the American Story 14 Mar. 2024, wams.nyhistory.org/confidence-and-crises/world-war-ii/gracehopper/“Biography of Grace Murray Hopper.” Office of the President, 9 Aug. 2017, https://president.yale.edu biography-grace-murray-hopper
+            </p>
+
+        </div>
+    </div>
+
+</section>
+<script>
+    
+     
+        
+    let sectionTwoMain = document.getElementById('section2_main');
+            let imageSection2 = document.getElementById('image_bacground_section2');
+            let textTitlesection2 = document.getElementById('textTitle');
+            let textContainer = document.getElementById('2TextCont');
+            let textmain3 = document.getElementById('text3');
+            let rectanglecover = document.getElementById('rectanglecover');
+            let toggleT = document.getElementById('toggleSection2');
+            document.addEventListener("scroll", function() {
+                 
+                if (inView(imageSection2)) {
+                    
+                    loadsection2(imageSection2, textTitlesection2, textContainer, toggleT);
+                     
+                } else {
+                    imageSection2.classList.remove('in-view');
+                    textTitlesection2.classList.remove('in-view');
+                    textContainer.classList.remove('in-view');
+                }
+                const section3top = rectanglecover.getBoundingClientRect().top + textmain3.offsetHeight ;
+                const text3Top = textmain3.getBoundingClientRect().top + textmain3.offsetHeight;
+                const text3Bottom = textmain3.getBoundingClientRect().top + textmain3.offsetHeight + window.pageYOffset;
+                const viewportTop = window.pageYOffset;
+                const viewportBottom = window.pageYOffset + window.innerHeight;
+                /*console.log(`viewporttop: ${viewportTop}, viewportbottom: ${viewportBottom}`);
+                console.log(`text top: ${text3Top}, text bototm: ${text3Bottom}`);
+                */
+                if (text3Bottom <= viewportBottom/* && text3Top < viewportTop*/) {
+                    
+                    growthAn(rectanglecover);
+                    
+                } 
+                else /*if (text3Top <= viewportTop || section3top > viewportBottom || text3Top < 0)*/{
+                    
+                    growthAnReversed(rectanglecover);
+                    textmain3.classList.remove('in-view');
+                }
+                 
+
+            })
+
+</script>
+{% endblock content %}
