@@ -22,13 +22,13 @@
 </head>
 <body>
     <!-- Global template from which other templates inherit from -->
-    <section class="section1_main" id="global_nav" style="height: 100vh;">
+    <section class="section1_main " id="global_nav" style="position: relative; height: 100vh;">
         <div class="container-fluid">
             <div class ="row justify-content-start">
                 <div class="col-sm" style="position: relative; z-index:5; ">
                     <!-- Text that activates the navigation menu -->
-                    <div id ="openCloseNavBarText" style="padding:5px">
-                        <h3  class="m-3" >
+                    <div id ="openCloseNavBarText" style="padding:5px; position: relative;">
+                        <h3  class="m-3" style="">
                             MENU
                         </h3>
                     </div>                    
@@ -39,31 +39,18 @@
         <!-- Nav menu, uses js to show up -->
         <div class ="nav-menu " id ="navMenu" style="position: absolute; top: 0; background-color: white; height: 100vh; width:fit-content;">
             
-            <ul>
+            <ul class="mt-5">
                 <li><a href="team.html">Members</a></li>
-                <li><a href="process.html">Index</a></li>
-                <li><a href="innovator.html">About Grace</a></li>
-                <li><a href="process.html">The Process</a></li>
+                <li><a href="{% url 'index_page' %}">Index</a></li>
+                <li><a href="{% url 'contributor_page' %}">About Grace</a></li>
+                <li><a href="{% url 'process_page' %}">The Process</a></li>
 
             </ul>
         </div>
-        <div class="container-fluid p-2" style="margin-top: 2vh; ">
-            <div class="row">
-                <div class="col-md-1"></div>
-                <div class="col-md-5">
-                    <h2 id="quotes" style="height: 100%; color: white; display:flex; align-items: center;">
-                        Grace Hopper
-                        
-                    </h2>
-
-                </div>
-                <div class="col-md-6">
-                    <!-- source: https://upload.wikimedia.org/wikipedia/commons/a/ad/Commodore_Grace_M._Hopper%2C_USN_%28covered%29.jpg-->
-                    <img width="400" src="{% static 'img/wikigracehopper.jpg' %}" style="margin-left: 50px;" alt="Grace Hopper in Military Uniform">           
-                </div>
-                 
-            </div>
-        </div>
+        {% block main_up %}
+        
+            
+        {% endblock main_up %}
         
     </section>
     <!--Block in the skeleton template that contains 'block' where the content in each html will be contained-->

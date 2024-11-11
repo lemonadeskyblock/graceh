@@ -1,0 +1,159 @@
+{% extends "skeleton.html" %}
+{% load static %}
+{% block main_up %}
+    <div class="container-fluid" style="border: solid green;">
+        <div></div>
+        <h1 style="color: aliceblue; font-size: 7em; font-weight: bold; text-align: center; margin-top: 10vh;">
+            GRACE HOPPER
+        </h1>
+
+        <div class="container-fluid" >
+            <div class="row mx-5 mt-5" style="background-color: white; border-radius: 20px; height: 45vh; align-items: center;">
+                
+
+                    <div class="col-md-6" style="height: 100%; display: flex;justify-content: center; align-items: center;">
+                        <img src="{% static 'img/placeholder.png' %}" style="height: 80%; ">
+                    </div>
+                    <div class="col-md-6">
+                        <p class="mx-5">
+                            Welcome to our website blah balh blah blah blah balh blah blah blah balh blah blah blah balh blah blahblah balh blah blahblah balh blah blahblah balh blah blah
+                        </p>
+                    </div>
+
+                 
+                
+            </div>
+            
+        </div>
+
+    </div>
+
+{% endblock main_up %}
+
+
+{% block content %}
+<section id="section2_index" style="height: 100vh; position: relative; background-color: black;">
+    <!-- Sliding carrousel-->
+     <div class="mb-5" style="margin-left: 3vw; border: solid green;">
+        <h2 style="color: white;">
+            The content ....
+        </h2>
+     </div>
+     
+
+     <!--Start of box-like containers-->
+     <div class="container-fluid mt-5" id="scrollrightpass" style=" border: solid red;">
+        
+
+        <div class="row mt-5 overflow_scroll" id="OverflowScrollRight" style="border: solid rgb(47, 57, 255) 2px; display: flex; flex-wrap: nowrap; overflow:scroll;">
+            
+            <div class="col-md-4 mx-3 scroll_right_items">
+                <div class="scroll_right_items_i">
+                    <img src="{% static 'img/placeholder.png' %}" style="width: 100%; height: 60%;">
+                    <h3>Our Team</h3>
+                    <p>Here are the people who created the wbsite</p>
+                </div>
+            </div>
+        
+            <div class="col-md-4 mx-3 scroll_right_items">
+
+                <div class="scroll_right_items_i ">
+                    <img src="{% static 'img/placeholder.png' %}" style="width: 100%; height: 60%; ">
+                    <h3>Process</h3>
+                    <p>Here you will find the process for creating the website</p>
+                </div>
+            </div>
+            <div class="col-md-4 mx-3 scroll_right_items">
+
+                <div class="scroll_right_items_i">
+                    <img src="{% static 'img/placeholder.png' %}" style="width: 100%; height: 60%;">
+                    <h3>Process</h3>
+                    <p>Here you will find the process for creating the website</p>
+                </div>
+            </div>
+            <div class="col-md-4 mx-3 scroll_right_items ">
+
+                <div class="scroll_right_items_i">
+                    <img src="{% static 'img/placeholder.png' %}" style="width: 100%; height: 60%;">
+                    <h3>Process</h3>
+                    <p>Here you will find the process for creating the website</p>
+                </div>
+            </div>
+            <div class="col-md-4 mx-3 scroll_right_items ">
+
+                <div class="scroll_right_items_i">
+                    <img src="{% static 'img/placeholder.png' %}" style="width: 100%; height: 60%;">
+                    <h3>Process</h3>
+                    <p>Here you will find the process for creating the website</p>
+                </div>
+            </div>
+             
+
+             
+
+        </div>
+
+     </div>
+      
+ 
+
+</section>
+<script>
+    let scrollRightPassThrough = document.getElementById('OverflowScrollRight');
+    var lastscrollTop = 0;
+    const viewportHeight = window.innerHeight;
+    
+    let scrollRightBottom =scrollRightPassThrough.getBoundingClientRect().bottom 
+    let scrollRightBottom_i = document.getElementsByClassName('scroll_right_items_i');
+    //* Credits for scroll Top Down "https://github.com/qeremy/so/blob/master/so.dom/.js#L426*/
+    let viewportBottom = window.pageYOffset +viewportHeight;
+    
+    document.addEventListener("scroll", () => {
+        var currentScroll = window.pageYOffset || document.documentElement.scrollTop;
+        viewportBottom = window.pageYOffset +viewportHeight;
+        
+        let scrollRightPassThroughwidth = scrollRightPassThrough.offsetWidth;
+        console.log(`scrollRIght Bottom: ${scrollRightBottom}`);
+        console.log(`viewport Bottom: ${viewportBottom}`);
+        let distance = scrollRightPassThroughwidth / scrollRightBottom_i.length
+        if (viewportBottom > scrollRightBottom) {
+            /*missing stop scroll*/
+            console.log('ftftfyf');
+                if (ScrollDown(currentScroll, lastscrollTop)) {
+                    console.log('scroll down')
+                    /*disableScroll();*/
+                    
+            // downscrowl code
+                    scrollRight(scrollRightPassThrough, distance);
+                    () => {scrollRightPassThrough.scrollTo({left: distance})}
+                     
+                    if (scrollRightPassThrough.scrollX === scrollRightPassThroughwidth) {
+                        enableScrolling();
+                    }
+                    
+                } else {
+                    console.log('scroll up');
+                
+                if (scrollRightPassThrough.scrollX === 0) {
+                        enableScrolling();
+                }
+                    
+                    scrollLeft(scrollRightPassThrough, distance);
+
+                }
+                console.log(`scrollRightPassThrough.scrollX: ${scrollRightPassThrough.scrollX}`);
+                console.log(`scrollRightPassThrough width: ${scrollRightPassThroughwidth}`);
+            lastscrollTop = currentScroll <= 0 ? 0  : currentScroll;
+        }
+        
+        /*if end reached*/        
+        
+        
+        
+    })
+    
+    const viewportTop = window.pageYOffset;
+                
+
+</script>
+{% endblock content %}

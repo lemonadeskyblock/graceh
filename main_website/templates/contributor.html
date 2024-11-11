@@ -1,5 +1,25 @@
 {% extends "skeleton.html" %}
 {% load static %}
+{% block main_up %}
+<div class="container-fluid p-2" style="height: 80%; position: relative; margin-top: 2vh;" >
+    <div class="row mx-3" style="position: relative; height:fit-content; ">
+        
+        <div class="col-md-6" style="display:flex; float: inline-start;">
+            <h2 class="align-items-center" id="quotes" style="color: white; display: flex;justify-content: center; width: 100%; ">
+                Grace Hopper
+                
+            </h2>
+
+        </div>
+        <div class="col-md-6" style="max-height: 70vh;">
+            <!-- source: https://upload.wikimedia.org/wikipedia/commons/a/ad/Commodore_Grace_M._Hopper%2C_USN_%28covered%29.jpg-->
+            <img src="{% static 'img/wikigracehopper.jpg' %}" style="float: inline-end; height:100%;" alt="Grace Hopper in Military Uniform">           
+        </div>
+        
+    </div>
+</div>
+
+{% endblock main_up %}
 
 {% block content %}
 <section id="section2_main" style="height: 100vh; position: relative;">

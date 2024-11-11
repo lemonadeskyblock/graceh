@@ -2,5 +2,7 @@ from django.urls import path
 from . import views
 
 urlpatterns = [
-    path("contributor/", views.landing_page, name = "landing_page")
+    path("contributor/", views.landing_page, name = "contributor_page"),
+    path("process/", views.process_page, name ='process_page'),
+    path("index/", views.index_page, name="index_page")
 ]

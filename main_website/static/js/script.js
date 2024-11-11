@@ -261,6 +261,7 @@ function dropDown(toggleElement, ElementToggled) {
     } else {
         /* Ideally get height of toggle elemet to make substraction */
         /* open dropdown*/
+
         toggleElement.style.transform = 'rotate(180deg)';
         
         let dropDownRevealDropdown = KUTE.fromTo(ElementToggled,
@@ -293,7 +294,7 @@ document.addEventListener("DOMContentLoaded", function() {
 })
 function loadGlobal() {
     
-    fetch('skeleton.html')
+    fetch("{% static 'img/GRACEhopper_long.jpg' %}")
     .then(response => response.text())
     .then(html => {
         document.getElementById("globalnav").innerHTML = html;
@@ -314,3 +315,49 @@ function loadGlobal() {
     })
 }
 
+function scrollLeft(element, distance) {
+    let scrollLeftcrossing = KUTE.fromTo(element,
+    {left: 0},
+    {left: distance},
+    {
+        
+        duration: 100
+    });
+    scrollLeftcrossing.start();
+}
+
+function scrollRight(element, distance) {
+    let scrollRightcrossing = KUTE.fromTo(element,
+    {right: 0},
+    {right:distance},
+    {
+        
+        duration: 100
+    });
+    scrollRightcrossing.start();
+}
+
+function ScrollDown(currentScroll, lastscrollTop) {
+    console.log(`currentScroll: ${currentScroll}, lastscrolltop ${lastscrollTop}`);
+    if (currentScroll > lastscrollTop) {
+
+        return true
+
+    } else {
+
+    return false
+
+    }
+
+
+}
+function disableScroll() {
+    var x = window.scrollX;
+    var y = window.scrollY;
+    console.log('disable scroll');
+    window.onscroll = function(){window.scrollTo(x,y)}
+}
+
+function enableScrolling() {
+    window.onscroll=function(){}
+}
