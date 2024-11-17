@@ -1,0 +1,92 @@
+{% extends "skeleton.html" %}
+{% load static %}
+{% block main_up %}
+<section style="height: 100vh;">
+    <div class="container-fluid" style="border: solid green;">
+        <div></div>
+        <h1 style="color: aliceblue; font-size: 12em; font-weight: bold; text-align: center;">
+            PROCESS
+        </h1>
+
+    </div>
+
+</section>
+    
+
+{% endblock main_up %}
+ 
+
+{% block content %}
+<section id="section2_process" style="height: 280vh; width: 100vw;; position: relative;">
+    <!-- Sliding carrousel-->
+    <div class="members_list m_list_odd">
+        <div class="row individualMember">
+        
+            <div class="col-md-4">
+                
+            </div>
+            <div class="col-md-4">
+                <h3>Brianna</h3>
+
+            </div>
+            <div class="col-md-4 floatright">
+                <img src="{% static 'img/Brianna.jpg' %}">
+            </div>
+        </div> 
+        <!---->
+        <div class="row individualMember">
+             
+            <div class="col-md-4">
+                <img src="{% static 'img/Caitlyn.jpg' %}">
+
+            </div>
+            <div class="col-md-4">
+                <h3>Caitlyn</h3>
+            </div>
+            <div class="col-md-4">
+
+            </div>
+        
+        </div>
+
+        <div class="row individualMember even">
+             
+            <div class="col-md-4">
+                
+            </div>
+            <div class="col-md-4">
+                <h3>Natalie</h3>
+               
+            </div>
+            <div class="col-md-4 floatright">
+                <img src="{% static 'img/Natalie.jpg' %}">
+
+            </div>
+            
+            
+        </div>
+
+        <div class="row individualMember">
+             
+            <div class="col-md-4">
+                <img src="{% static 'img/Zasha.jpg' %}">                
+            </div>
+            <div class="col-md-4">
+                <h3>Zasha Benites</h3>
+               
+            </div>
+            <div class="col-md-4"></div>
+          
+           
+
+        </div>
+
+
+
+    </div>
+    
+
+</section>
+<script>
+</script>
+{% endblock content %}

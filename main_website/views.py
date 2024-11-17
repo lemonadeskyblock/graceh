@@ -10,3 +10,5 @@ def process_page(request):
     return render(request, 'process.html')
 def index_page(request):
     return render(request, 'index.html')
+def team_page(request):
+    return render(request, 'team.html')

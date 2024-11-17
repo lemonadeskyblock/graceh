@@ -11,7 +11,7 @@
 
     </script> 
     <link rel="stylesheet" href="{% static 'css/styles.css' %}">
-     
+    <script src="https://cdn.jsdelivr.net/npm/horizontal-scroll@1.1.0/dist/index.min.js"></script>
     <script src="{% static 'js/script.js' %}"></script>
      
  
@@ -20,10 +20,22 @@
     {% endblock css_link %}
     <title>Grace Hopper Website</title>
 </head>
-<body>
+<body style="width: 100vw;  position: relative; overflow-x: hidden;">
+    <style>
+        body {
+        cursor: url("{% static 'img/ellipsewhiteshadow.png' %}") 26 16, auto;
+        }
+        
+        #navMenu {
+            cursor: url("{% static 'img/blackllipsis.png' %}") 16 16, auto !important;
+        }
+         
+    </style>
+     
+ 
     <!-- Global template from which other templates inherit from -->
-    <section class="section1_main " id="global_nav" style="position: relative; height: 100vh;">
-        <div class="container-fluid">
+    <section class="section1_main " id="global_nav" style="position: absolute; height: 100vh; width: 100vw;">
+        <div class="container-fluid" style="position: absolute; ">
             <div class ="row justify-content-start">
                 <div class="col-sm" style="position: relative; z-index:5; ">
                     <!-- Text that activates the navigation menu -->
@@ -40,7 +52,7 @@
         <div class ="nav-menu " id ="navMenu" style="position: absolute; top: 0; background-color: white; height: 100vh; width:fit-content;">
             
             <ul class="mt-5">
-                <li><a href="team.html">Members</a></li>
+                <li><a href="{% url 'team_page' %}">Members</a></li>
                 <li><a href="{% url 'index_page' %}">Index</a></li>
                 <li><a href="{% url 'contributor_page' %}">About Grace</a></li>
                 <li><a href="{% url 'process_page' %}">The Process</a></li>
@@ -52,7 +64,7 @@
             
         {% endblock main_up %}
         
-    </section>
+    
     <!--Block in the skeleton template that contains 'block' where the content in each html will be contained-->
     {% block content %}
     {% endblock content %}
@@ -60,21 +72,15 @@
         <div class="container-fluid">
             <div class="row justify-content-around">
                 <div>
-                    <p>
+                    <p style=" margin: 5%;">
                         We certify that the content included in this website is our own original work (or is cited accurately) and accurate to our knowledge. Work included which was conducted as part of a team or other group is indicated and attributed as such the other team members are named, and a true description of our roles in the project is included.
 
 Group One Caitlyn Maas, Zasha Benites, Shelia Hernandez, Brianna Henriquez-Diaz.
-                    </p>
-                    <p>
+                    <br><br>
                         Layout by Bootstrap
 
                         References taken from W3Schools
                     </p>
-                </div>
-                <div>
-                    <svg>
-
-                    </svg>
                 </div>
 
             </div>

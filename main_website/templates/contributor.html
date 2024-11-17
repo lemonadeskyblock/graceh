@@ -1,19 +1,19 @@
 {% extends "skeleton.html" %}
 {% load static %}
 {% block main_up %}
-<div class="container-fluid p-2" style="height: 80%; position: relative; margin-top: 2vh;" >
-    <div class="row mx-3" style="position: relative; height:fit-content; ">
+<div class="container-fluid" style="height: 100%; position: relative;" >
+    <div class="row" style="position: relative; ">
         
-        <div class="col-md-6" style="display:flex; float: inline-start;">
+        <div class="col-md-8" id="picHoldersection1" style=" height: 100vh; display:flex; float: inline-start; align-self: center; width: 100vh;background-image: url(''); background-size: cover;">
             <h2 class="align-items-center" id="quotes" style="color: white; display: flex;justify-content: center; width: 100%; ">
-                Grace Hopper
+                -
                 
             </h2>
 
         </div>
-        <div class="col-md-6" style="max-height: 70vh;">
+        <div class="col-md-4" style="position:absolute; top:0; right:0; height: 100vh; overflow-x: hidden;">
             <!-- source: https://upload.wikimedia.org/wikipedia/commons/a/ad/Commodore_Grace_M._Hopper%2C_USN_%28covered%29.jpg-->
-            <img src="{% static 'img/wikigracehopper.jpg' %}" style="float: inline-end; height:100%;" alt="Grace Hopper in Military Uniform">           
+            <img  src="{% static 'img/wikigracehopper.jpg' %}" style="height:100%;  float: inline-end;" alt="Grace Hopper in Military Uniform">           
         </div>
         
     </div>
@@ -22,7 +22,8 @@
 {% endblock main_up %}
 
 {% block content %}
-<section id="section2_main" style="height: 100vh; position: relative;">
+<!-- https://vcencyclopedia.vassar.edu/wp-content/uploads/2021/11/1583771839362.jpeg -->
+<section id="section2_main" style="height: 100vh; position: relative; ">
     <div id="image_bacground_section2">
         <img id="imggrace" src="{% static 'img/GRACEhopper_long.jpg' %}" alt="Grace Hopper Working">
     </div>
@@ -104,6 +105,69 @@
 
 </section>
 <script>
+    function OpacitytoNoOpacity(element) {
+        let BlurtoNOne = KUTE.fromTo(element, 
+            {opacity: 1},
+            {opacity: 0},
+            {
+                duration: 800
+            });
+         
+        BlurtoNOne.start();
+    }
+    function initAnimationSectionOne (element) {
+
+        element.style.opacity = 1
+        console.log(`bounding client rect: ${element.getBoundingClientRect().x}`);
+        let initAnimationleft = KUTE.fromTo(element,
+            {right: element.getBoundingClientRect().width},
+            {right: 0},
+            {
+                duration: 200
+            });
+        let reset = KUTE.fromTo(element,
+            {right: 0},
+            {right: element.getBoundingClientRect().width},
+            {
+                duration: 2000
+            });
+            initAnimationleft.start();
+            setTimeout(() => {
+                OpacitytoNoOpacity(element);
+                setTimeout(() => {
+                    element.style.transform = `translateX(${0}px)`;
+                     
+                
+                }, 1000);
+            }, 1500);
+        
+    }
+
+    let imagesSection1 = [
+            '/static/img/graceunivacvertical.jpeg',
+            '/static/img/gracehoppervertical.png',
+            '/static/img/GraceHopperSpeaking.webp',
+        ]
+    let picHoldersection1 = document.getElementById('picHoldersection1');
+    if (performance.navigation.type == performance.navigation.TYPE_RELOAD) {
+        (async () => {for (let i = 0; i < imagesSection1.length; i++) {
+            picHoldersection1.style.backgroundImage = `url(${imagesSection1[i]})`;
+             
+            console.log(`iteration :  ${i}`);
+            initAnimationSectionOne(picHoldersection1);
+            await new Promise(resolve => setTimeout(resolve, 3500));
+             
+         
+            }
+            picHoldersection1.style.backgroundImage = '';
+            
+        /*picHoldersection1.style.backgroundImage ='';*/
+        })();
+    
+    } else {
+    console.info( "This page is not reloaded");
+    }
+  
     
      
         

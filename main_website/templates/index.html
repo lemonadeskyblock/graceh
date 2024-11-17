@@ -1,7 +1,7 @@
 {% extends "skeleton.html" %}
 {% load static %}
 {% block main_up %}
-    <div class="container-fluid" style="border: solid green;">
+    <div class="container-fluid" style="">
         <div></div>
         <h1 style="color: aliceblue; font-size: 7em; font-weight: bold; text-align: center; margin-top: 10vh;">
             GRACE HOPPER
@@ -32,9 +32,9 @@
 
 
 {% block content %}
-<section id="section2_index" style="height: 100vh; position: relative; background-color: black;">
+<section id="section2_index" style="height: 100vh; width: 100vw; position: relative; background-color: black; margin-top: 10vh;">
     <!-- Sliding carrousel-->
-     <div class="mb-5" style="margin-left: 3vw; border: solid green;">
+     <div class="mt-5" style="margin-left: 3vw;   width: fit-content;">
         <h2 style="color: white;">
             The content ....
         </h2>
@@ -42,50 +42,60 @@
      
 
      <!--Start of box-like containers-->
-     <div class="container-fluid mt-5" id="scrollrightpass" style=" border: solid red;">
+     <!--Credits to Corentin Fardeu for the js horizontal scroll-->
+     <div class="mt-5" id="scrollrightpass" style="width: fit-content;">
         
 
-        <div class="row mt-5 overflow_scroll" id="OverflowScrollRight" style="border: solid rgb(47, 57, 255) 2px; display: flex; flex-wrap: nowrap; overflow:scroll;">
+        <div class=" overflow_scroll" id="OverflowScrollRight" style="">
             
-            <div class="col-md-4 mx-3 scroll_right_items">
+            <div class="mx-3 scroll_right_items scroll_right_items_1">
                 <div class="scroll_right_items_i">
-                    <img src="{% static 'img/placeholder.png' %}" style="width: 100%; height: 60%;">
-                    <h3>Our Team</h3>
-                    <p>Here are the people who created the wbsite</p>
+                    <img src="{% static 'img/placeholder.png' %}" style="">
+                    <h3>OUR TEAM</h3>
+                    <p>Here are the people who created the website</p>
                 </div>
             </div>
         
-            <div class="col-md-4 mx-3 scroll_right_items">
+            <div class=" mx-3 scroll_right_items scroll_right_items_2">
 
                 <div class="scroll_right_items_i ">
-                    <img src="{% static 'img/placeholder.png' %}" style="width: 100%; height: 60%; ">
+                    <img src="{% static 'img/placeholder.png' %}" style="">
+                    <h3>HOME PAGE</h3>
+                    <p>You are currently here, hope you are enjoying it</p>
+                </div>
+
+            </div>
+            <div class="mx-3 scroll_right_items scroll_right_items_3">
+
+                <div class="scroll_right_items_i">
+                    <img src="{% static 'img/placeholder.png' %}" style="">
+                    <h3>ABOUT HOPPER</h3>
+                    <p>Learn about Grace Hopper, her constributions and her life</p>
+                </div>
+            </div>
+            <div class="mx-3 scroll_right_items scroll_right_items_4">
+
+                <div class="scroll_right_items_i">
+                    <img src="{% static 'img/placeholder.png' %}" style="">
+                    <h3>PROCESS</h3>
+                    <p>Here you will find the process for creating the website</p>
+                </div>
+            </div>
+            <div class="mx-3 scroll_right_items scroll_right_items_5">
+
+                <div class="scroll_right_items_i">
+                    <img src="{% static 'img/placeholder.png' %}" style="">
                     <h3>Process</h3>
                     <p>Here you will find the process for creating the website</p>
                 </div>
             </div>
-            <div class="col-md-4 mx-3 scroll_right_items">
-
+            <div class="mx-3 scroll_right_items" style="visibility: hidden;">
                 <div class="scroll_right_items_i">
-                    <img src="{% static 'img/placeholder.png' %}" style="width: 100%; height: 60%;">
+                    <img src="" style="width: 100%; height: 60%;">
                     <h3>Process</h3>
-                    <p>Here you will find the process for creating the website</p>
+                    <p> </p>
                 </div>
-            </div>
-            <div class="col-md-4 mx-3 scroll_right_items ">
-
-                <div class="scroll_right_items_i">
-                    <img src="{% static 'img/placeholder.png' %}" style="width: 100%; height: 60%;">
-                    <h3>Process</h3>
-                    <p>Here you will find the process for creating the website</p>
-                </div>
-            </div>
-            <div class="col-md-4 mx-3 scroll_right_items ">
-
-                <div class="scroll_right_items_i">
-                    <img src="{% static 'img/placeholder.png' %}" style="width: 100%; height: 60%;">
-                    <h3>Process</h3>
-                    <p>Here you will find the process for creating the website</p>
-                </div>
+                 
             </div>
              
 
@@ -98,54 +108,28 @@
  
 
 </section>
+<section></section>
 <script>
-    let scrollRightPassThrough = document.getElementById('OverflowScrollRight');
-    var lastscrollTop = 0;
-    const viewportHeight = window.innerHeight;
-    
-    let scrollRightBottom =scrollRightPassThrough.getBoundingClientRect().bottom 
-    let scrollRightBottom_i = document.getElementsByClassName('scroll_right_items_i');
-    //* Credits for scroll Top Down "https://github.com/qeremy/so/blob/master/so.dom/.js#L426*/
-    let viewportBottom = window.pageYOffset +viewportHeight;
+    let horizontalScrollIndex = document.getElementsByClassName('scroll_right_items');
+    let containerHorizontalScroll = document.getElementsByClassName('overflow_scroll');
+    function horizontalScroll(GroupOfObjects, container) {
+        var hs = new HorizontalScroll.default({
+            blocks: GroupOfObjects,
+            container: container,
+            isAnimated: true,
+            springEffect: 0.8,
+
+
+        })
+    }
+    horizontalScroll(horizontalScrollIndex, containerHorizontalScroll);
+
+
+
+     
     
     document.addEventListener("scroll", () => {
-        var currentScroll = window.pageYOffset || document.documentElement.scrollTop;
-        viewportBottom = window.pageYOffset +viewportHeight;
-        
-        let scrollRightPassThroughwidth = scrollRightPassThrough.offsetWidth;
-        console.log(`scrollRIght Bottom: ${scrollRightBottom}`);
-        console.log(`viewport Bottom: ${viewportBottom}`);
-        let distance = scrollRightPassThroughwidth / scrollRightBottom_i.length
-        if (viewportBottom > scrollRightBottom) {
-            /*missing stop scroll*/
-            console.log('ftftfyf');
-                if (ScrollDown(currentScroll, lastscrollTop)) {
-                    console.log('scroll down')
-                    /*disableScroll();*/
-                    
-            // downscrowl code
-                    scrollRight(scrollRightPassThrough, distance);
-                    () => {scrollRightPassThrough.scrollTo({left: distance})}
-                     
-                    if (scrollRightPassThrough.scrollX === scrollRightPassThroughwidth) {
-                        enableScrolling();
-                    }
-                    
-                } else {
-                    console.log('scroll up');
-                
-                if (scrollRightPassThrough.scrollX === 0) {
-                        enableScrolling();
-                }
-                    
-                    scrollLeft(scrollRightPassThrough, distance);
-
-                }
-                console.log(`scrollRightPassThrough.scrollX: ${scrollRightPassThrough.scrollX}`);
-                console.log(`scrollRightPassThrough width: ${scrollRightPassThroughwidth}`);
-            lastscrollTop = currentScroll <= 0 ? 0  : currentScroll;
-        }
-        
+         
         /*if end reached*/        
         
         
