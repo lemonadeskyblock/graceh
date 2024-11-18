@@ -7,9 +7,9 @@
         <!--https://blog.cis.upenn.edu/wp-content/uploads/2023/04/Grace_Hopper_UNIVAC.jpg-->
         <!--https://www.frauen-informatik-geschichte.de/10162946033c936ccb4bb28.jpg-->
         <!---->
-        <div class="col-md-8" id="picHoldersection1" style=" height: 100vh; display:flex; float: inline-start; align-self: center; width: 100vh;background-image: url(''); background-size: cover;">
-            <h2 class="align-items-center" id="quotes" style="color: white; display: flex;justify-content: center; width: 100%; ">
-                -
+        <div class="col-md-8" id="picHoldersection1" style=" height: 100vh; display:flex; float: inline-start; align-self: center; width: 100vh;background-image: url(''); background-size: cover; position: relative;">
+            <h2 class="align-items-center" id="quotes" style="color: white; display: flex;justify-content: center; width: 100%; z-index: 5;">
+                
                 
             </h2>
 
@@ -68,12 +68,15 @@
 <section id="sectionmain_3" style="overflow:hidden; height: 100vh; position: relative; background-color: rgb(255, 255, 255);">
     <div id="rectanglecover" style="opacity: 1; z-index:0; position:absolute;  top:0; background-color: rgb(0, 0, 0); height: 100%; "></div>
     <div class="container-fluid" >
-        <h1 style="text-align: center; margin-top: 10%; position:relative">
+        <h1 style="text-align: center; margin-top: 10%; position:relative" id="underrepresentationtittle">
             UNDERREPRESENTATION
+            <p style="font-weight:400; font-size: 1rem">click me</p>
+             
         </h1>
+
         <row class="m-5">
             <div style="margin-left: 5vw; margin-right: 5vw;">
-                <p id="text3" style="color:rgb(255, 255, 255); font-size: 2rem;  position:relative; z-index:2; text-align: center;">
+                <p id="text3" style="color:rgb(255, 255, 255); font-size: 1.3rem;  position:relative; z-index:2; text-align: center;">
                     Grace Hopper faced significant underrepresentation in the tech field mainly due to gender bias. During her time, society often viewed women as less capable in science and technology, leading to their ideas being dismissed or overlooked. Despite her groundbreaking contributions, such as creating the first compiler, many saw her work as unimportant simply because she was a woman. Her innovative approach—using words instead of symbols in programming—was doubted by many. Still, Hopper persevered and proved that her ideas were valuable, showing the strength and brilliance women can bring to the tech world.</p>
             </div>
         </row>
@@ -99,7 +102,7 @@
             SELECTION
         </h1>
         <div style="margin-left:5vw; margin-right: 5vw;">
-            <p style="font-size: 1.5em;">
+            <p style="font-size: 1em;">
                 We first began our selection by naming underrepresented and influential people we did our research on for our assignment. Among them were: Ruzena Bajcsy, Mary Kenneth, Joy Buolamwini, Manuela Veloso and Jennifer Widow. However, during the lecture we talked about Grace Hopper, and we all agreed that her contributions were especially remarkable in modern technology, as she helped develop the creation of high-level languages without the need of hand-coding. For that reason, we chose Grace Hopper because having created the first computer compiler, her contribution to today’s technology was groundbreaking and crucial for translating written code into machine-readable language that would save a lot of resources for times to come. Machines were now able to respond to written words additional to numbers with increasing speed, increased code readability and evolved the standard of languages used in important technological areas. Worked Cited Boomer, Lee. “Life Story: Grace Brewster Murray Hopper, 1906-1992.” Women & the American Story 14 Mar. 2024, wams.nyhistory.org/confidence-and-crises/world-war-ii/gracehopper/“Biography of Grace Murray Hopper.” Office of the President, 9 Aug. 2017, https://president.yale.edu biography-grace-murray-hopper
             </p>
 
@@ -118,9 +121,13 @@
         cursor: url("{% static 'img/ellipsewhiteshadow.png' %}") 16 16, auto !important;
 
     }
+    #sectionmain_3 {
+        cursor: default;
+    }
      
 </style>
 <script>
+     
     function OpacitytoNoOpacity(element) {
         let BlurtoNOne = KUTE.fromTo(element, 
             {opacity: 1},
@@ -157,6 +164,8 @@
                 }, 1000);
             }, 1500);
         
+             
+        
     }
 
     let imagesSection1 = [
@@ -176,13 +185,11 @@
          
             }
             picHoldersection1.style.backgroundImage = '';
-            
+            picHoldersection1.style.opacity="1";
         /*picHoldersection1.style.backgroundImage ='';*/
         })();
     
-    } else {
-    console.info( "This page is not reloaded");
-    }
+    }  
   
     
      
@@ -194,6 +201,21 @@
             let textmain3 = document.getElementById('text3');
             let rectanglecover = document.getElementById('rectanglecover');
             let toggleT = document.getElementById('toggleSection2');
+            let section3contributor = document.getElementById('sectionmain_3');
+            let underrepresentationtittle = document.getElementById('underrepresentationtittle');
+
+            section3contributor.addEventListener("click", () => {
+                
+                if (rectanglecover.classList.contains('in-view')){
+                growthAnReversed(rectanglecover);
+                rectanglecover.classList.remove('in-view');
+                underrepresentationtittle.style.color ="black";
+                } else {
+                    growthAn(rectanglecover);
+                    underrepresentationtittle.style.color ="white";
+                }
+            })
+
             document.addEventListener("scroll", function() {
                  
                 if (inView(imageSection2)) {
@@ -205,27 +227,17 @@
                     textTitlesection2.classList.remove('in-view');
                     textContainer.classList.remove('in-view');
                 }
-                const section3top = rectanglecover.getBoundingClientRect().top + textmain3.offsetHeight ;
-                const text3Top = textmain3.getBoundingClientRect().top + textmain3.offsetHeight;
-                const text3Bottom = textmain3.getBoundingClientRect().top + textmain3.offsetHeight + window.pageYOffset;
-                const viewportTop = window.pageYOffset;
-                const viewportBottom = window.pageYOffset + window.innerHeight;
-                /*console.log(`viewporttop: ${viewportTop}, viewportbottom: ${viewportBottom}`);
-                console.log(`text top: ${text3Top}, text bototm: ${text3Bottom}`);
-                */
-                if (text3Bottom <= viewportBottom/* && text3Top < viewportTop*/) {
-                    
-                    growthAn(rectanglecover);
-                    
-                } 
-                else /*if (text3Top <= viewportTop || section3top > viewportBottom || text3Top < 0)*/{
-                    
-                    growthAnReversed(rectanglecover);
-                    textmain3.classList.remove('in-view');
-                }
+                 
                  
 
             })
+            loadQuotes(); 
+            
+                
+                    
+             
+            
+            
 
 </script>
 {% endblock content %}

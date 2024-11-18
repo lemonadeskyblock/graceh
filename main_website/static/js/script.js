@@ -50,8 +50,30 @@ async function openCloseNavBar(openCloseNavBarText) {
 /*https://wearetechwomen.com/inspirational-quotes-grace-hopper-computer-scientist-u-s-navy-rear-admiral/#:~:text=“Leadership%20is%20a%20two%2Dway,half%20empty%20nor%20half%20full.*/
 var index = 0
 var quotesArray = [];
+
+async function fill(calcwaitTime, quotesSpace,quotesArray) {
+    let i =0
+    while (true){
+        if (i == quotesArray.length) {
+            i = 0;
+        }           
+        console.log(`texti: ${quotesArray[i]}`);
+                     
+        let waitingTime  = calcwaitTime(quotesArray[i].length);
+        console.log(`timing: ${waitingTime}`);
+        writeText(quotesSpace, quotesArray[i]);
+        
+        const a = await new Promise(resolve => setTimeout(resolve, waitingTime)); 
+        i++;
+         
+        }
+                
+            }
+                    
+
+
 async function loadQuotes() {
-    const requestjson = new Request("quotes.json");
+    const requestjson = new Request("/jsonquotes");
     fetch(requestjson)
         .then(response => response.json())
         .then((data) => {
@@ -61,32 +83,19 @@ async function loadQuotes() {
                 quotesArray.push(data[i]);
             }
             var quotesSpace  = document.getElementById("quotes");
-            function fill ()    
-            {
-                if (index == 8) 
-                    {
-                    index = 0;
-                    }
-                console.log(`index: ${index}`);
-                writeText(quotesSpace, quotesArray[index]);
-                index++;
-            }
+            
             console.log(`time: ${quotesArray[index].length * 100}`)
             let lengthtxt = quotesArray[index].length 
-            let calcwaitTime = (lengthtxt) => (lengthtxt < 100 ? lengthtxt * 120 / 1.5 : lengthtxt * 250);
-            let waitingTime = calcwaitTime(lengthtxt);
-            const fillQuoteSpace = setInterval(fill, waitingTime);
+            
+             
+            let calcwaitTime = (lengthtxt) => (lengthtxt < 100 ? lengthtxt * 120  : lengthtxt * 140);
+            fill(calcwaitTime, quotesSpace,quotesArray);
         })
         .catch(error => {
             console.log(error);
         })
 }
-function loadGlobal() {
-    
-     
-        
-     
-}
+
 
 function inView(element) {
     let rect = element.getBoundingClientRect();
@@ -117,7 +126,7 @@ function blurContentAnimation(element) {
     }
 }
  
-let screenWidth = window.screen.width;
+let screenWidth = window.innerWidth;
 
 function growthAn(element) {
     
@@ -127,8 +136,7 @@ function growthAn(element) {
             {width:'0'},
             {width: screenWidth},
             {
-                delay: 1200,
-                duration: 5000
+                duration: 4000
             }
             
 
@@ -213,16 +221,10 @@ function slideInAnimation(element) {
 }
 async function writeText(TextElement, txt) {
     
-    let stext = txt;
-    let calcwaitTime = (stext) => (stext.length < 90 ? stext.length / 1.5 : stext.length);
-    let waitTime = calcwaitTime(stext);
-    TextElement.textContent = "";
-    console.log(txt);
     
-    console.log(typeof txt);
-    console.log(stext.length);
-    console.log(`waittime: ${calcwaitTime(stext)}`);
-    console.log(`waittime: ${stext.length/1.5}`);
+     
+    TextElement.textContent = "";
+     
     for (let i = 0; i < txt.length; i++) {
         TextElement.textContent+= txt.charAt(i);
         
@@ -281,17 +283,7 @@ function dropDown(toggleElement, ElementToggled) {
 
 }
 /** can be changed to arrow function remember arrow an this are immediatly invoked */
-document.addEventListener("DOMContentLoaded", function() {
-    
-    
 
-
-    /*openCloseNavBarText.addEventListener("click", function() {
-        openCloseNavBar(openCloseNavBarText);
-    */
-    
-
-})
 function loadGlobal() {
     
     fetch("{% static 'img/GRACEhopper_long.jpg' %}")
@@ -306,7 +298,7 @@ function loadGlobal() {
             openCloseNavBarText.addEventListener( "click", function() {
                 openCloseNavBar(openCloseNavBarText);
             })
-            loadQuotes();
+            
         
         }
     })
