@@ -1,5 +1,5 @@
 
-@import url('https://fonts.googleapis.com/css2?family=Geist:wght@100');
+@import url('https://fonts.googleapis.com/css2?family=Geist:wght@100..900&family=Host+Grotesk:ital,wght@0,300..800;1,300..800&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 body {
     font-family:Arial, Helvetica, sans-serif;
     
@@ -22,7 +22,7 @@ h1#textTitle {
      /* Visible color */
      
 p {
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: 'Poppins', sans-serif;
 }
 a {
     text-decoration: none;
@@ -33,15 +33,15 @@ a {
 h1 {
     color: rgb(0, 0, 0);
     font-size: 5em;
-    font-family:  Arial, Helvetica, sans-serif;
+    font-family: 'Poppins', sans-serif;
 
 }
 h2 {
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: 'Poppins', sans-serif;
 }
 
 h3 {
-    font-family:  Arial, Helvetica, sans-serif;
+    font-family: 'Poppins', sans-serif;
     font-size: 1em;
 }
 
@@ -166,7 +166,7 @@ h3 {
     position: relative;
     background-color: white;
     border-radius: 15px;
-    height: 45vh; 
+    height: 30vh; 
     width: 30vw;
     margin-right: 15vw;
     margin-bottom: 15vw;
@@ -187,7 +187,9 @@ h3 {
      
 
 }
-#scrollrightpass {
+ 
+.overflow_scroll {
+    position: relative;
     margin-left: 5vw;
     margin-right: 5vw;
      
@@ -198,10 +200,6 @@ h3 {
      
     padding-bottom: 5vh;
 
-}
-.overflow_scroll {
-    position: relative;
-
      
 }
 
@@ -210,6 +208,7 @@ h3 {
     width: 100%; 
     height: 70%;
     margin-top: 1vh;
+    
      
 }
  
@@ -220,30 +219,20 @@ h3 {
 }
 
 .scroll_right_items_i p {
-      
-     text-wrap: wrap;
+    
+    text-wrap: wrap;
       
 
 }
 
 .scroll_right_items:hover {
     color: rgb(26, 26, 26);
-    transform: translateY(-15px);
     transition: 0.5s ease-in-out ;
-    
+    transform: translateY(-15px);
     text-shadow: 4px 4px 7px rgba(54, 54, 54, 0.621);
 }
 
-@keyframes getIn {
-    from {
-        opacity: 0;
-        transform: translateY(-10px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0px);
-    }
-}
+ 
 
 .members_list {
     margin-bottom: 2vh;
@@ -264,7 +253,7 @@ h3 {
 }
 
 .individualMember img {
-    border: solid green;
+    
     height: 100%;
     margin-left: auto;
     margin-right: auto;
@@ -273,11 +262,89 @@ h3 {
 
 .individualMember .flexcenter  {
     display: flex;
-    border:solid red;
+    
 
      
 }
-.individualMember .floatleft  {
+.individualMember .text {
+    margin-top: auto;
+    margin-bottom: auto;
+}
+.step {
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.497);
+    padding: 10px;
+    margin-left: 3vw; 
+    display: flex;
+    width: 45vw;
+    margin-right: 3vw;
+    height: 58vh;
      
 }
+.groupSteps::-webkit-scrollbar {
+    display: none;  
+  }
+.step_effect {
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.497) !important;
+    padding: 10px !important;
+    margin-left: 3vw !important; 
+    display: flex !important;
+    width: 80vw !important;
+    margin-right: 3vw !important;
+    height: 78vh !important;
+    font-size: 1.1em;
 
+}
+.step img{
+    width: 25vw;
+    height: 45vh;
+}
+
+.step-inside {
+    margin-top: auto;
+    
+    margin-bottom: auto;
+}
+
+.step-inside p {
+    margin-left: 3vw;
+}
+ 
+.groupSteps {
+    
+    overflow-x: scroll;
+     
+    display: flex;
+    padding: 40px;
+    position: relative;
+}
+
+#arrowright {
+    position: absolute;
+    top:30%;
+    right:-3vw;
+    
+    width: 10vw;
+    height:200px;
+    z-index: 3;
+}
+#arrowleft {
+    position: absolute;
+    top:30%;
+    left:-3vw;
+    
+    width: 10vw;
+    height:200px;
+    z-index: 3;
+
+}
+.container {
+    margin-top: 15vh;
+    position:relative;
+     
+    width: 100vw;
+     
+}
+img.step-effect {  
+    width: 30vw !important;
+    height: 100% !important;
+}

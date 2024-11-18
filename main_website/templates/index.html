@@ -1,7 +1,12 @@
 {% extends "skeleton.html" %}
 {% load static %}
 {% block main_up %}
-    <div class="container-fluid" style="">
+    <style> 
+        body {
+            background-color: black;
+        }
+    </style>
+    <div class="container-fluid" style="height: 100%;">
         <div></div>
         <h1 style="color: aliceblue; font-size: 7em; font-weight: bold; text-align: center; margin-top: 10vh;">
             GRACE HOPPER
@@ -12,11 +17,11 @@
                 
 
                     <div class="col-md-6" style="height: 100%; display: flex;justify-content: center; align-items: center;">
-                        <img src="{% static 'img/placeholder.png' %}" style="height: 80%; ">
+                        <img src="{% static 'img/Grace_Hopper_UNIVAC.jpg' %}" style="height: 80%; ">
                     </div>
                     <div class="col-md-6">
                         <p class="mx-5">
-                            Welcome to our website blah balh blah blah blah balh blah blah blah balh blah blah blah balh blah blahblah balh blah blahblah balh blah blahblah balh blah blah
+                            Welcome to our website's homepage! This website is made in honor of Grace Hopper. You can navigate throught the website using the above menu or using while you are here the boxes below.
                         </p>
                     </div>
 
@@ -32,10 +37,10 @@
 
 
 {% block content %}
-<section id="section2_index" style="height: 100vh; width: 100vw; position: relative; background-color: black; margin-top: 10vh;">
+<section id="section2_index" style="position: relative; height: 100vh; width: 100vw; background-color: black;">
     <!-- Sliding carrousel-->
      <div class="mt-5" style="margin-left: 3vw;   width: fit-content;">
-        <h2 style="color: white;">
+        <h2 style="color: white; margin-bottom: 10vh;">
             The content ....
         </h2>
      </div>
@@ -46,57 +51,72 @@
      <div class="mt-5" id="scrollrightpass" style="width: fit-content;">
         
 
-        <div class=" overflow_scroll" id="OverflowScrollRight" style="">
+        <div class="overflow_scroll" >
             
-            <div class="mx-3 scroll_right_items scroll_right_items_1">
-                <div class="scroll_right_items_i">
-                    <img src="{% static 'img/placeholder.png' %}" style="">
-                    <h3>OUR TEAM</h3>
-                    <p>Here are the people who created the website</p>
-                </div>
+            <div class="mx-3 scroll_right_items" style="visibility: hidden;" >
+                
+                    <div  class="scroll_right_items_i">
+                        <img src=""  >
+                        <h3>Process</h3>
+                        <p>Here you will find the process for creating the website</p>
+                    </div>
+                 
+                 
+            </div>
+            <div class="mx-3 scroll_right_items">
+                <a href="{% url 'index_page' %}">
+                    <div class="scroll_right_items_i">
+                        <!--https://images.inc.com/uploaded_files/image/1920x1080/GettyImages-50336184_115567.jpg-->
+                        <img src="{% static 'img/GettyImages-50336184_115567.jpg' %}" >
+                        <h3>INDEX</h3>
+                        <p>This is our Index. A small guide an insights about our website and our 'Home Page'.</p>
+                    </div>
+                </a>
             </div>
         
-            <div class=" mx-3 scroll_right_items scroll_right_items_2">
-
-                <div class="scroll_right_items_i ">
-                    <img src="{% static 'img/placeholder.png' %}" style="">
-                    <h3>HOME PAGE</h3>
-                    <p>You are currently here, hope you are enjoying it</p>
-                </div>
-
+            <div class=" mx-3 scroll_right_items ">
+                <a href="{% url 'contributor_page' %}"> 
+                    <div class="scroll_right_items_i ">    
+                        <!--https://www.theengineer.co.uk/media/cgonpxdb/grace_murray_hopper-_in_her_office_in_washington_dc-_1978-_-lynn_gilbert.jpg-->
+                        <img src="{% static 'img/grace_index_index.jpg' %}" >
+                        <h3>CONTRIBUTOR</h3>
+                        <p>Learn about Grace Hopper, her life, contributions and her achievements.</p>
+                    </div>
+                </a>
             </div>
-            <div class="mx-3 scroll_right_items scroll_right_items_3">
-
-                <div class="scroll_right_items_i">
-                    <img src="{% static 'img/placeholder.png' %}" style="">
-                    <h3>ABOUT HOPPER</h3>
-                    <p>Learn about Grace Hopper, her constributions and her life</p>
-                </div>
+            <div class="mx-3 scroll_right_items">
+                <a href="{% url 'team_page' %}"> 
+                    <div class="scroll_right_items_i">
+                        
+                        <img src="{% static 'img/GRACEhopper_long.jpg'%}" >
+                        <h3>OUR TEAM</h3>
+                        <p>Here are the people who helped make this website and their information.</p>
+                    </div>
+                </a>
             </div>
-            <div class="mx-3 scroll_right_items scroll_right_items_4">
-
-                <div class="scroll_right_items_i">
-                    <img src="{% static 'img/placeholder.png' %}" style="">
-                    <h3>PROCESS</h3>
-                    <p>Here you will find the process for creating the website</p>
-                </div>
+            <div class="mx-3 scroll_right_items">
+                <a href="{% url 'process_page' %}"> 
+                    <div class="scroll_right_items_i">
+                        <img src="{% static 'img/grace_infrontmachine.webp' %}" >
+                        <h3>PROCESS</h3>
+                        <p>Here you will learn about how this website was made, step by step.</p>
+                    </div>
+                </a>
             </div>
-            <div class="mx-3 scroll_right_items scroll_right_items_5">
+            
+             
+             
 
-                <div class="scroll_right_items_i">
-                    <img src="{% static 'img/placeholder.png' %}" style="">
-                    <h3>Process</h3>
-                    <p>Here you will find the process for creating the website</p>
-                </div>
-            </div>
             <div class="mx-3 scroll_right_items" style="visibility: hidden;">
                 <div class="scroll_right_items_i">
-                    <img src="" style="width: 100%; height: 60%;">
+                    <img src=""  >
                     <h3>Process</h3>
-                    <p> </p>
+                    <p>Here you will find the process for creating the website</p>
                 </div>
                  
             </div>
+
+            
              
 
              
@@ -123,6 +143,8 @@
         })
     }
     horizontalScroll(horizontalScrollIndex, containerHorizontalScroll);
+     
+    
 
 
 

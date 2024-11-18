@@ -1,10 +1,11 @@
 {% extends "skeleton.html" %}
 {% load static %}
 {% block main_up %}
-    <div class="container-fluid" style="border: solid green;">
-        <div></div>
+    <div class="container-fluid"  >
+        <div style="margin-top: 10vh;"></div>
         <h1 style="color: aliceblue; font-size: 12em; font-weight: bold; text-align: center;">
-            MEMBERS
+                PROCESS
+
         </h1>
 
     </div>
@@ -13,11 +14,127 @@
 
 
 {% block content %}
-<section id="section2_process" style="height: 100vh; position: relative;">
+<section id="section2_process" style="height: 100vh; background-color: rgb(255, 255, 255); position: relative;">
     <!-- Sliding carrousel-->
-    
+    <style>
+         
+        
+        #section2_process {
+            cursor: url("{% static 'img/blackllipsis.png' %}") 16 16, auto !important;
+        }
+         
+    </style>
+    <div class="container">
+        
+        <img id="arrowright" src="{% static 'img/arrowright.svg' %}">
+        <img id="arrowleft" src="{% static 'img/arrowleft.svg' %}">
+        <div class="groupSteps" id="groupSteps">
+            
+            <div class="step">
+                
+                <div class="step-inside">
+                    <h2>Project Charter</h2>
+                    <p>This is an overall outline of our project and research, it includes our research and a management plan.
+                        <br><br><a href="https://docs.google.com/document/d/1D9tD69w-o_RUC9qlLwk8FWxG_FpVRuNhBYseh2_lSds/edit?usp=sharing">Click here</a>
+                    </p>
+                    
+                
+                </div>
+                <img src="{% static 'img/Charter.png' %}">
+
+                
+            </div>
+            <div class="step">
+                <div class="step-inside">
+                    <h2>Project Research</h2>
+                    <p>
+                        We researched about Grace Hopper for our website, highlighting her significance, contributions and explaining why we chose her.
+                    <br><br>  <a href="https://docs.google.com/document/d/1a25U9oQDJLOhk9k9ua0RW2iZCNWyNdSrpzBLq-IHoMs/edit?usp=sharing">Click here</a>
+                    </p>
+                   
+                    
+                </div>
+                <img src="{% static 'img/Research.png' %}">
+                
+            </div>
+            <div class="step">
+                <div class="step-inside">
+                    <h2>Website Wireframe</h2>
+                    <p>
+                        The draft of our website that includes who we are, who Grace Hopper is and what we had done until then.
+                    <br><br> <a href="">Click here</a>
+                    </p>
+                    
+                    
+                </div>
+                <img src="{% static 'img/Research.png' %}">
+                
+            </div>
+            <div class="step">
+                <div class="step-inside">
+                    <h2>Presentation</h2>
+                    <p>
+                        At the end of the semester, we will prepare a presentation to inform of Grace Hopper’s contribution to modern society as an underrepresented woman..
+                         
+                    </p>
+                    
+                    
+                </div>
+                <img src="{% static 'img/Research.png' %}">
+                
+            </div>
+        </div>
+    </div>
 
 </section>
 <script>
+     
+            let containerSteps = document.getElementById('groupSteps');
+            let outlineProcess = document.getElementsByClassName('step');
+            let arrowleft = document.getElementById('arrowleft');
+            let arrowright = document.getElementById('arrowright');
+            
+            var i= 0;
+            arrowleft.addEventListener("click", () => {
+                console.log(`arrow left: ${outlineProcess[i]}`);
+                if (i != 0) {
+                    containerSteps.scrollLeft -= outlineProcess[i].offsetWidth;
+                    if (i < outlineProcess.length){
+                        outlineProcess[i].classList.remove('step_effect'); 
+                        document.querySelectorAll('.step img')[i].classList.remove('step-effect');
+                         
+                    }
+                     
+                    outlineProcess[i-1].classList.add('step_effect');
+                    document.querySelectorAll('.step img')[i-1].classList.add('step-effect');
+                     
+
+                    i--;
+                    console.log(`i: ${i}`);
+                } 
+                
+                
+            })
+            arrowright.addEventListener("click", () => {
+                console.log(`arrow left: ${outlineProcess[i]}`);
+                if (i < outlineProcess.length -1) {
+                    containerSteps.scrollLeft += outlineProcess[i].offsetWidth;
+                     
+                        outlineProcess[i].classList.remove('step_effect') ;
+                        document.querySelectorAll('.step img')[i].classList.remove('step-effect');
+                        
+                     
+
+                    outlineProcess[i+1].classList.add('step_effect');
+                    document.querySelectorAll('.step img')[i+1].classList.add('step-effect');
+                     
+                     
+                    i++;
+                    console.log(`i: ${i}`);
+                }
+                
+                
+            })
+ 
 </script>
 {% endblock content %}

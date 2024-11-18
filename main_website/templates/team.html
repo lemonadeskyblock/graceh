@@ -2,7 +2,7 @@
 {% load static %}
 {% block main_up %}
 <section style="height: 100vh;">
-    <div class="container-fluid" style="border: solid green;">
+    <div class="container-fluid" style="">
         <div></div>
         <h1 style="color: aliceblue; font-size: 12em; font-weight: bold; text-align: center;">
             OUR TEAM
@@ -18,7 +18,7 @@
 
 {% block content %}
  
-<section id="section2_process" style="height: 280vh; width: 100vw;; position: relative;">
+<section id="section2_process" style="height: 240vh; width: 100vw;; position: relative;">
     <style>
          
         #section2_process {
@@ -28,14 +28,26 @@
          
     </style>
     <!-- Sliding carrousel-->
+    <script>
+        let members = document.getElementsByClassName('individualMember');
+        
+        members.forEach(element => {
+             
+            let x = element.getElementsByTagName(img);
+            let an = KUTE.to(x[0],{clip:[0,150,100,0]});
+            an.start();
+        });
+        
+    </script>
     <div class="members_list m_list_odd">
         <div class="row individualMember">
         
             <div class="col-md-4">
                 
             </div>
-            <div class="col-md-4">
-                <h3>Brianna</h3>
+            <div class="col-md-4 text">
+                <h2>Brianna Henriquez-Diaz</h2>
+                <p>brihenri@iu.edu</p>
 
             </div>
             <div class="col-md-4 flexcenter">
@@ -49,8 +61,9 @@
                 <img src="{% static 'img/Caitlyn.jpg' %}">
 
             </div>
-            <div class="col-md-4">
-                <h3>Caitlyn</h3>
+            <div class="col-md-4 text">
+                <h2>Caitlyn Maas</h2>
+                <p>camaas@iu.edu</p>
             </div>
             <div class="col-md-4">
 
@@ -63,8 +76,9 @@
             <div class="col-md-4">
                 
             </div>
-            <div class="col-md-4">
-                <h3>Natalie</h3>
+            <div class="col-md-4 text">
+                <h2>Shelia Hernandez</h2>
+                <p>Sheherna@iu.edu</p>
                
             </div>
             <div class="col-md-4 flexcenter" >
@@ -80,8 +94,9 @@
             <div class="col-md-4 flexcenter">
                 <img src="{% static 'img/Zasha.jpg' %}">                
             </div>
-            <div class="col-md-4">
-                <h3>Zasha Benites</h3>
+            <div class="col-md-4 text">
+                <h2>Zasha Benites</h2>
+                <p>mbenites@iu.edu</p>
                
             </div>
             <div class="col-md-4"></div>

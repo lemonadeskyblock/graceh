@@ -21,16 +21,7 @@
     <title>Grace Hopper Website</title>
 </head>
 <body style="width: 100vw;  position: relative; overflow-x: hidden;">
-    <style>
-        body {
-        cursor: url("{% static 'img/ellipsewhiteshadow.png' %}") 26 16, auto;
-        }
-        
-        #navMenu {
-            cursor: url("{% static 'img/blackllipsis.png' %}") 16 16, auto !important;
-        }
-         
-    </style>
+   
      
  
     <!-- Global template from which other templates inherit from -->
@@ -48,6 +39,16 @@
             </div>
         
         </div>
+        <style>
+            body {
+            cursor: url("{% static 'img/ellipsewhiteshadow.png' %}") 26 16, auto;
+            }
+            
+            #navMenu {
+                cursor: url("{% static 'img/blackllipsis.png' %}") 16 16, auto !important;
+            }
+             
+        </style>
         <!-- Nav menu, uses js to show up -->
         <div class ="nav-menu " id ="navMenu" style="position: absolute; top: 0; background-color: white; height: 100vh; width:fit-content;">
             
@@ -64,11 +65,12 @@
             
         {% endblock main_up %}
         
-    
+    </section>
+    <section style="height: 100vh; margin: 0;"></section>
     <!--Block in the skeleton template that contains 'block' where the content in each html will be contained-->
     {% block content %}
     {% endblock content %}
-    <section class="section_bottom">
+    <section class="section_bottom" style="background-color: white;">
         <div class="container-fluid">
             <div class="row justify-content-around">
                 <div>
