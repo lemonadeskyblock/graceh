@@ -6,10 +6,10 @@ body {
 }
 h1#textTitle {
     margin-left: 2vw;
-    margin-top: 35vh;
+    margin-top: 22vh;
     font-family: Arial, Helvetica, sans-serif;
     font-weight: bolder;
-    font-size: 8em;
+    font-size: 6.5em;
     color: white;
     
     text-shadow: 3px 3px 3px rgba(65, 64, 64, 0.577),
@@ -288,10 +288,10 @@ h3 {
     padding: 10px !important;
     margin-left: 3vw !important; 
     display: flex !important;
-    width: 80vw !important;
+    width: 60vw !important;
     margin-right: 3vw !important;
     height: 78vh !important;
-    font-size: 1.1em;
+    font-size: 1em !important;
 
 }
 .step img{
@@ -301,18 +301,23 @@ h3 {
 
 .step-inside {
     margin-top: auto;
-    
+    margin-right: 1vw;
     margin-bottom: auto;
 }
 
 .step-inside p {
     margin-left: 3vw;
 }
+
+#section3_process p  {
+    margin-left: 5vw;
+    margin-right: 5vw;
+}
  
 .groupSteps {
     
     overflow-x: scroll;
-     
+    
     display: flex;
     padding: 40px;
     position: relative;
@@ -345,6 +350,6 @@ h3 {
      
 }
 img.step-effect {  
-    width: 30vw !important;
+    width: 25vw !important;
     height: 100% !important;
 }

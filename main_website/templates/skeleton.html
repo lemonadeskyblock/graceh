@@ -26,7 +26,7 @@
  
     <!-- Global template from which other templates inherit from -->
     <section class="section1_main " id="global_nav" style="position: absolute; height: 100vh; width: 100vw;">
-        <div class="container-fluid" style="position: absolute; ">
+        <div class="container-fluid"  id="upskeleton" style="position: absolute; ">
             <div class ="row justify-content-start">
                 <div class="col-sm" style="position: relative; z-index:5; ">
                     <!-- Text that activates the navigation menu -->
@@ -40,11 +40,18 @@
         
         </div>
         <style>
+            #upskeleton {
+                cursor: default;
+            }
             body {
             cursor: url("{% static 'img/ellipsewhiteshadow.png' %}") 26 16, auto;
             }
             
             #navMenu {
+                cursor: default;
+                /*cursor: url("{% static 'img/blackllipsis.png' %}") 16 16, auto !important;*/
+            }
+            .section_bottom {
                 cursor: url("{% static 'img/blackllipsis.png' %}") 16 16, auto !important;
             }
              

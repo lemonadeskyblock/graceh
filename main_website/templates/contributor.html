@@ -1,7 +1,7 @@
 {% extends "skeleton.html" %}
 {% load static %}
 {% block main_up %}
-<div class="container-fluid" style="height: 100%; position: relative;" >
+<div class="container-fluid section1contributor" style="height: 100%; position: relative;" >
     <div class="row" style="position: relative; ">
         <!--https://cdn.britannica.com/95/149295-050-109D07FA/Grace-Murray-Hopper-groundbreaking-ceremony-San-Diego-1985.jpg-->
         <!--https://blog.cis.upenn.edu/wp-content/uploads/2023/04/Grace_Hopper_UNIVAC.jpg-->
@@ -107,6 +107,19 @@
     </div>
 
 </section>
+<style>
+         
+    .section1contributor {
+      
+        cursor: url("{% static 'img/ellipsewhiteshadow.png' %}") 16 16, auto !important;
+
+}
+    body {
+        cursor: url("{% static 'img/ellipsewhiteshadow.png' %}") 16 16, auto !important;
+
+    }
+     
+</style>
 <script>
     function OpacitytoNoOpacity(element) {
         let BlurtoNOne = KUTE.fromTo(element, 
@@ -152,7 +165,7 @@
             '/static/img/GraceHopperSpeaking.webp',
         ]
     let picHoldersection1 = document.getElementById('picHoldersection1');
-    if (performance.navigation.type == performance.navigation.TYPE_RELOAD) {
+    if (performance.navigation.type === performance.navigation.TYPE_RELOAD || window.performance && performance.navigation.type === 1) {
         (async () => {for (let i = 0; i < imagesSection1.length; i++) {
             picHoldersection1.style.backgroundImage = `url(${imagesSection1[i]})`;
              

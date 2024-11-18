@@ -14,16 +14,9 @@
 
 
 {% block content %}
-<section id="section2_process" style="height: 100vh; background-color: rgb(255, 255, 255); position: relative;">
+<section id="section2_process" style="height: 80vh; background-color: rgb(255, 255, 255); position: relative;">
     <!-- Sliding carrousel-->
-    <style>
-         
-        
-        #section2_process {
-            cursor: url("{% static 'img/blackllipsis.png' %}") 16 16, auto !important;
-        }
-         
-    </style>
+    
     <div class="container">
         
         <img id="arrowright" src="{% static 'img/arrowright.svg' %}">
@@ -48,7 +41,7 @@
                 <div class="step-inside">
                     <h2>Project Research</h2>
                     <p>
-                        We researched about Grace Hopper for our website, highlighting her significance, contributions and explaining why we chose her.
+                        Our research on Grace Hopper highlighting her significance, contributions and explaining why we chose her.
                     <br><br>  <a href="https://docs.google.com/document/d/1a25U9oQDJLOhk9k9ua0RW2iZCNWyNdSrpzBLq-IHoMs/edit?usp=sharing">Click here</a>
                     </p>
                    
@@ -62,12 +55,12 @@
                     <h2>Website Wireframe</h2>
                     <p>
                         The draft of our website that includes who we are, who Grace Hopper is and what we had done until then.
-                    <br><br> <a href="">Click here</a>
+                    <br><br> <a href="https://www.figma.com/design/dN8nZEUJd5rnrKmNupSBeM/Project-Website-Wireframe?node-id=0-1&t=1Oe1XoHUoH5DMbid-1">Click here</a>
                     </p>
                     
                     
                 </div>
-                <img src="{% static 'img/Research.png' %}">
+                <img src="{% static 'img/figmatemplate.png' %}">
                 
             </div>
             <div class="step">
@@ -80,13 +73,34 @@
                     
                     
                 </div>
-                <img src="{% static 'img/Research.png' %}">
+                 
+                <img src="{% static 'img/presentation.png' %}">
                 
             </div>
         </div>
     </div>
 
 </section>
+<section id="section3_process">
+    <div>
+        <h1>A reflection on our work</h1>
+        <p>We worked together well, everybody did their part. We believe we worked well because of the open comunication between us. We would recommend other groups to also discuss openly their ideas, no idea is bad, even if it may seem insignificant ideas provide a foundation to build a better project.</p>
+        <p>What we recommend other groups is to always use collaborative plataforms, like google sheets, google drive, github, etc.</p>
+    </div>
+</section>
+<hr>
+<style>
+         
+        
+    #section2_process {
+        cursor: url("{% static 'img/blackllipsis.png' %}") 16 16, auto !important;
+    }
+    #section3_process {
+        cursor: url("{% static 'img/blackllipsis.png' %}") 16 16, auto !important;
+
+    }
+     
+</style>
 <script>
      
             let containerSteps = document.getElementById('groupSteps');
