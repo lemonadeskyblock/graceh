@@ -2,8 +2,8 @@
 {% load static %}
 {% block main_up %}
     <div class="container-fluid"  >
-        <div style="margin-top: 10vh;"></div>
-        <h1 style="color: aliceblue; font-size: 12em; font-weight: bold; text-align: center;">
+        <div style="margin-top: 15vh;"></div>
+        <h1 id="processh1" style="color: aliceblue; font-size: 12em; font-weight: bold; text-align: center;">
                 PROCESS
 
         </h1>
@@ -17,7 +17,7 @@
 <section id="section2_process" style="height: 80vh; background-color: rgb(255, 255, 255); position: relative;">
     <!-- Sliding carrousel-->
     
-    <div class="container">
+    <div class="container rise-animation">
         
         <img id="arrowright" src="{% static 'img/arrowright.svg' %}">
         <img id="arrowleft" src="{% static 'img/arrowleft.svg' %}">
@@ -88,7 +88,7 @@
                     
                 </div>
                  
-                <img src="{% static 'img/feedback.png' %}">
+                <img src="{% static 'img/feeback.png' %}">
                 
             </div>
         </div>
@@ -96,7 +96,7 @@
 
 </section>
 <section id="section3_process" style="margin-top: 10vh;">
-    <div>
+    <div class="rise-animation">
         <h1>A reflection on our work</h1>
         <p>We worked together well, everybody did their part. We believe we worked well because of the open comunication between us. We would recommend other groups to also discuss openly their ideas, no idea is bad, even if it may seem insignificant ideas provide a foundation to build a better project.</p>
         <p>What we recommend other groups is to always use collaborative plataforms, like google sheets, google drive, github, etc.</p>
@@ -163,6 +163,26 @@
                 
                 
             })
+            document.addEventListener('scroll', () => {
+                let riseAnimation = document.getElementsByClassName('rise-animation');
+                Array.from(riseAnimation).forEach(element => {
+                    if (inView(element)) {
+                        if (!element.classList.contains('slow-rise')){
+                        element.classList.add('slow-rise');
+                    }
+                    
+                    }
+                    else {
+                    
+                        element.classList.remove('slow-rise');
+
+                        
+                    }
+                        
+                })
+                
+            })
+            
  
 </script>
 {% endblock content %}

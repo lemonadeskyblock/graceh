@@ -88,8 +88,8 @@
 
 </section>
 <section class="section-snap" id="section_futurepromise" style="height:80vh; margin-top: 10vh;">
-    <h1 class="future_promise" style="text-align: center; color:white;">FUTURE PROMISE</h1>
-    <div class="future_promise" id="promisereveal" style="position: relative; height: 40vh; width:80vw; margin-top: 10vh;">
+    <h1 class="future_promise rise-animation" style="text-align: center; color:white;">FUTURE PROMISE</h1>
+    <div class="future_promise rise-animation" id="promisereveal" style="position: relative; height: 40vh; width:80vw; margin-top: 10vh;">
         <svg  width="100%" height="100%" style="position: absolute;">
             <rect id="promisesvg" width="100%" height="100%" style="stroke:rgb(255, 255, 255);stroke-width:10" />
             
@@ -102,7 +102,7 @@
 
 </section>
 <section style="margin-bottom: 10vh;">
-    <div class ='container-fluid m-5'>
+    <div class ='container-fluid m-5 '>
         <h1 style="color:white;">
             SELECTION
         </h1>
@@ -237,7 +237,7 @@
                     textContainer.classList.remove('in-view');
                 }
                 let section_futurepromise = document.getElementById('section_futurepromise');
-                let futurepromise = document.getElementsByClassName('future_promise');
+                let futurepromise = document.getElementsByClassName('rise-animation');
                 if(inView(section_futurepromise)) {
                     
                     Array.from(futurepromise).forEach(element => {
