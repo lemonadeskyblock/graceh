@@ -148,8 +148,32 @@ h3 {
 
 }
 #promise{
-    animation: slideIn 30s infinite ease-in-out; 
+    margin-left: 3vw;
+    margin-right: 3vw;
+    margin-top: 5vh;
+    text-align: center;
+    color:white;
+
+      
 }
+#promisereveal {
+ 
+    margin-left: 8vw;
+    margin-right: 8vw;
+}
+
+@keyframes FadeIn {
+    from {
+        opacity: 1;
+        
+        
+    }
+    to {
+        opacity: 0;
+         
+    }
+}
+
 
 @keyframes slideIn {
     from {
@@ -162,17 +186,33 @@ h3 {
     }
 }
 
+@keyframes slowRise {
+    from {
+        transform: translateY(30px) ;
+        opacity: 0.4;
+    }
+    to {
+        transform: translateY(0px) ;
+        opacity: 1;
+    }
+}
+.slow-rise {
+    animation: slowRise 2s 0s ease-in;
+}
+
 .scroll_right_items {
     position: relative;
     background-color: white;
     border-radius: 15px;
-    height: 30vh; 
+    height: 33vh; 
     width: 30vw;
     margin-right: 15vw;
     margin-bottom: 15vw;
     position: relative;
-    box-shadow: 4px 4px 15px rgba(255, 255, 255, 0.586),
-    5px 5px 20px rgba(255, 255, 255, 0.422);
+    /*box-shadow: 5px 9px #d5d5d5a1, 4px 4px 15px rgba(255, 255, 255, 0.586),
+    5px 5px 20px rgba(255, 255, 255, 0.422);*/
+    box-shadow:   5px 5px 10px #707070,
+    -5px -5px 15px 1px #ffffffad;
   
 }
 
@@ -219,7 +259,7 @@ h3 {
 }
 
 .scroll_right_items_i p {
-    
+    padding-bottom: 5px;
     text-wrap: wrap;
       
 
@@ -243,7 +283,7 @@ h3 {
 
 .individualMember {
     height: 60vh;
-    border: solid rgb(52, 56, 46);
+     
     padding: 15px;
     position: relative;
     margin-top: 1vh;
@@ -352,4 +392,86 @@ h3 {
 img.step-effect {  
     width: 25vw !important;
     height: 100% !important;
+}
+.fadeinAn {
+    
+    animation: FadeIn 6s 0.0s ease-out;
+}
+.imgfadein {
+    background-color: black;
+    position: absolute;
+    height: 100%;
+    width: 85%;
+    opacity: 0;
+}
+
+#commentsBox {
+    margin-top: 4vh;
+    margin-left: 5vw;
+    font-family: 'Poppins',sans-serif;
+    margin-bottom: 8vh;
+     
+     
+}
+
+#commentsBox div {
+    margin-bottom: 3vh;
+}
+
+#commentsBox input {
+    border-radius: 15px;
+    margin-left: 5vw;
+    text-wrap: wrap;
+}
+#comment {
+    width: 45vw;
+    height: 15vh;
+}
+
+#commentsBox button {
+    border-radius: 10px;
+    background-color: white;
+    border: none;
+    padding: 10px;
+}
+
+#commentList div p {
+    color: white;
+}
+
+#commentList {
+    height: 45vh;
+    display: flex;
+    margin-left: 4vw;
+    
+    overflow-x: auto;
+    overflow-y: hidden;
+    padding: 30px;
+     
+}
+
+#commentList::-webkit-scrollbar-track {
+    background: #af373700;  
+}
+
+#commentList::-webkit-scrollbar-thumb {
+    background: #ffffff;  
+}
+#commentList::-webkit-scrollbar {
+    width: 10px;  
+    height: 10px;  
+}
+
+
+#commentList div {
+    min-width: 35vw !important;
+    height: 35vh !important;
+    box-shadow:  5px 9px #d5d5d5a1,
+    -10px -10px 30px #ffffff4b;
+    border-radius: 50px;
+     
+    padding: 40px;
+    margin-right: 2vw;
+    margin-left: 2vw;
+    border-radius: 35px;
 }

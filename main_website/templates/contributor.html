@@ -7,7 +7,7 @@
         <!--https://blog.cis.upenn.edu/wp-content/uploads/2023/04/Grace_Hopper_UNIVAC.jpg-->
         <!--https://www.frauen-informatik-geschichte.de/10162946033c936ccb4bb28.jpg-->
         <!---->
-        <div class="col-md-8" id="picHoldersection1" style=" height: 100vh; display:flex; float: inline-start; align-self: center; width: 100vh;background-image: url(''); background-size: cover; position: relative;">
+        <div class="col-md-8" id="picHoldersection1" style=" height: 100vh; display:flex; float: inline-start; align-self: center; width: 100vh;background-image: url(''); background-size: cover; position: relative; margin: 0;">
             <h2 class="align-items-center" id="quotes" style="color: white; display: flex;justify-content: center; width: 100%; z-index: 5;">
                 
                 
@@ -26,7 +26,7 @@
 
 {% block content %}
 <!-- https://vcencyclopedia.vassar.edu/wp-content/uploads/2021/11/1583771839362.jpeg -->
-<section id="section2_main" style="height: 100vh; position: relative; ">
+<section class="section-snap" id="section2_main " style="height: 100vh; position: relative; margin: 0; ">
     <div id="image_bacground_section2">
         <img id="imggrace" src="{% static 'img/GRACEhopper_long.jpg' %}" alt="Grace Hopper Working">
     </div>
@@ -65,44 +65,49 @@
     </div>
 </section>
 
-<section id="sectionmain_3" style="overflow:hidden; height: 100vh; position: relative; background-color: rgb(255, 255, 255);">
+<section class="section-snap" id="sectionmain_3" style="overflow:hidden; height: 100vh; position: relative; background-color: rgb(255, 255, 255);">
     <div id="rectanglecover" style="opacity: 1; z-index:0; position:absolute;  top:0; background-color: rgb(0, 0, 0); height: 100%; "></div>
-    <div class="container-fluid" >
-        <h1 style="text-align: center; margin-top: 10%; position:relative" id="underrepresentationtittle">
+    <div class="container-fluid" style="margin-top: 10vh;" >
+        <h1 style="text-align: center; position:relative" id="underrepresentationtittle">
             UNDERREPRESENTATION
             <p style="font-weight:400; font-size: 1rem">click me</p>
              
         </h1>
 
-        <row class="m-5">
-            <div style="margin-left: 5vw; margin-right: 5vw;">
+        <div class="m-5">
+            <div style="margin-left: 5vw; margin-right: 5vw; ">
                 <p id="text3" style="color:rgb(255, 255, 255); font-size: 1.3rem;  position:relative; z-index:2; text-align: center;">
                     Grace Hopper faced significant underrepresentation in the tech field mainly due to gender bias. During her time, society often viewed women as less capable in science and technology, leading to their ideas being dismissed or overlooked. Despite her groundbreaking contributions, such as creating the first compiler, many saw her work as unimportant simply because she was a woman. Her innovative approach—using words instead of symbols in programming—was doubted by many. Still, Hopper persevered and proved that her ideas were valuable, showing the strength and brilliance women can bring to the tech world.</p>
             </div>
-        </row>
+        </div>
     </div>
-    <div id="endsection3" style="position: absolute;   bottom: 10; border: solid;"></div>
+   
      
     
     
 
 </section>
-<section style="height:50vh; margin-top: 10vh;">
-    <h1 style="text-align: center;">FUTURE PROMISE</h1>
-    <div style="overflow: hidden; overflow: hidden; ">
-        <h2 id="promise" style="width: fit-content; white-space: nowrap;">
+<section class="section-snap" id="section_futurepromise" style="height:100vh; margin-top: 10vh;">
+    <h1 class="future_promise" style="text-align: center; color:white;">FUTURE PROMISE</h1>
+    <div class="future_promise" id="promisereveal" style="position: relative; height: 40vh; width:80vw; margin-top: 10vh;">
+        <svg  width="100%" height="100%" style="position: absolute;">
+            <rect id="promisesvg" width="100%" height="100%" style="stroke:rgb(255, 255, 255);stroke-width:10" />
+            
+        </svg>
+        <p id="promise" style="position: absolute; font-size: 1.5em;">
             We believe that the future of computer science is continuously growing. Many of Hopper's contributions to technology have already been utilized, but they will continue to be referenced by computer scientists in the future 
-        </h2>
+        </p>
+        
     </div>
 
 </section>
-<section>
+<section style="margin-bottom: 10vh;">
     <div class ='container-fluid m-5'>
-        <h1>
+        <h1 style="color:white;">
             SELECTION
         </h1>
         <div style="margin-left:5vw; margin-right: 5vw;">
-            <p style="font-size: 1em;">
+            <p style="font-size: 1em; color:white;">
                 We first began our selection by naming underrepresented and influential people we did our research on for our assignment. Among them were: Ruzena Bajcsy, Mary Kenneth, Joy Buolamwini, Manuela Veloso and Jennifer Widow. However, during the lecture we talked about Grace Hopper, and we all agreed that her contributions were especially remarkable in modern technology, as she helped develop the creation of high-level languages without the need of hand-coding. For that reason, we chose Grace Hopper because having created the first computer compiler, her contribution to today’s technology was groundbreaking and crucial for translating written code into machine-readable language that would save a lot of resources for times to come. Machines were now able to respond to written words additional to numbers with increasing speed, increased code readability and evolved the standard of languages used in important technological areas. Worked Cited Boomer, Lee. “Life Story: Grace Brewster Murray Hopper, 1906-1992.” Women & the American Story 14 Mar. 2024, wams.nyhistory.org/confidence-and-crises/world-war-ii/gracehopper/“Biography of Grace Murray Hopper.” Office of the President, 9 Aug. 2017, https://president.yale.edu biography-grace-murray-hopper
             </p>
 
@@ -111,7 +116,9 @@
 
 </section>
 <style>
-         
+    body {
+        background-color: black;
+    }      
     .section1contributor {
       
         cursor: url("{% static 'img/ellipsewhiteshadow.png' %}") 16 16, auto !important;
@@ -128,6 +135,8 @@
 </style>
 <script>
      
+     
+    
     function OpacitytoNoOpacity(element) {
         let BlurtoNOne = KUTE.fromTo(element, 
             {opacity: 1},
@@ -227,11 +236,25 @@
                     textTitlesection2.classList.remove('in-view');
                     textContainer.classList.remove('in-view');
                 }
-                 
+                let section_futurepromise = document.getElementById('section_futurepromise');
+                let futurepromise = document.getElementsByClassName('future_promise');
+                if(inView(section_futurepromise)) {
+                    
+                    Array.from(futurepromise).forEach(element => {
+                        element.classList.add('slow-rise');
+                    });
+                } else {
+                    Array.from(futurepromise).forEach(element => {
+                        element.classList.remove('slow-rise');
+                    });
+                     
+
+                }
                  
 
             })
             loadQuotes(); 
+
             
                 
                     

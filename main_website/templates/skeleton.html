@@ -14,6 +14,7 @@
     <script src="https://cdn.jsdelivr.net/npm/horizontal-scroll@1.1.0/dist/index.min.js"></script>
     <script src="{% static 'js/script.js' %}"></script>
      
+     
  
 
     {% block css_link %}
@@ -25,7 +26,7 @@
      
  
     <!-- Global template from which other templates inherit from -->
-    <section class="section1_main " id="global_nav" style="position: absolute; height: 100vh; width: 100vw;">
+    <section class="section1_main " id="global_nav" style="position: absolute; height: 100vh; width: 100vw; ">
         <div class="container-fluid"  id="upskeleton" style="position: absolute; ">
             <div class ="row justify-content-start">
                 <div class="col-sm" style="position: relative; z-index:5; ">
@@ -73,7 +74,7 @@
         {% endblock main_up %}
         
     </section>
-    <section style="height: 100vh; margin: 0;"></section>
+    <section style="height: 100vh; margin: 0; "></section>
     <!--Block in the skeleton template that contains 'block' where the content in each html will be contained-->
     {% block content %}
     {% endblock content %}

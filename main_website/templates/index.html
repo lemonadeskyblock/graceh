@@ -17,7 +17,9 @@
                 
 
                     <div class="col-md-6" style="height: 100%; display: flex;justify-content: center; align-items: center;">
+                        <!--https://blog.cis.upenn.edu/wp-content/uploads/2023/04/Grace_Hopper_UNIVAC.jpg-->
                         <img src="{% static 'img/Grace_Hopper_UNIVAC.jpg' %}" style="height: 80%; ">
+                        
                     </div>
                     <div class="col-md-6">
                         <p class="mx-5">
@@ -37,7 +39,7 @@
 
 
 {% block content %}
-<section id="section2_index" style="position: relative; height: 100vh; width: 100vw; background-color: black;">
+<section id="section2_index" style="position: relative; height: 80vh; width: 100vw; background-color: black;">
     <!-- Sliding carrousel-->
      <div class="mt-5" style="margin-left: 3vw;   width: fit-content;">
         <h2 style="color: white; margin-bottom: 10vh;">
@@ -104,6 +106,7 @@
                 </a>
             </div>
             
+            
              
              
 
@@ -128,7 +131,46 @@
  
 
 </section>
-<section></section>
+<section id="opinionSectionIndex" style="height: 150vh;">
+    <div>
+        <h1 style="color:white">Leave us your opinion! </h1>
+    </div>
+    <form id="commentsBox" action="{% url 'add_comment' %}" method="post">
+        {% csrf_token %}
+        <!--https://www.reshot.com/free-svg-icons/item/arrow-left-4NA6KJF8CU/-->
+        <
+        <div>
+            <label style="color:white" for="commenter">Write a nickname!</label>
+            <input id="commenter" name="commenter" required>   
+
+        </div>
+       <div>
+        <label style="color:white" for="comment">Your comment: </label>
+        <input id="comment" name="comment" maxlength="500" required>
+        
+
+       </div>
+       <button type="submit">Submit</button>
+    </form>
+    <h1 style="color:white;">Comments</h1>
+    <div id="commentList">
+        {% for comment_object in all_comments %}
+        <div>
+            <p>
+                Comment: {{ comment_object.comment }}
+                
+            </p>
+            <p>-{{ comment_object.commenter }}</p>
+
+        </div>
+            
+        {% empty %}
+        <h2 style="margin-left: 2vw; color: white;">No comments </h2>
+        {% endfor %}
+    </div>
+
+
+</section>
 <script>
     let horizontalScrollIndex = document.getElementsByClassName('scroll_right_items');
     let containerHorizontalScroll = document.getElementsByClassName('overflow_scroll');

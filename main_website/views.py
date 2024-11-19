@@ -1,10 +1,18 @@
 from django.shortcuts import render
+from django.urls import reverse
 from . import templates
-from django.http import HttpResponse, JsonResponse
+from django.http import HttpResponse, HttpResponseRedirect
 import csv
+from .models import Comments
  
 import time
+def delete_allcontent(request):
 
+    #number_of_users = UsersnoPassword.objects.count()
+
+    #print(f"There are {number_of_users} users in the Users model.")
+    Comments.objects.all().delete()
+    return HttpResponse('You did something Irreversible ! Congrats!')
 # Create your views here.
 def landing_page(request):
     return render(request, 'contributor.html')
@@ -12,7 +20,8 @@ def landing_page(request):
 def process_page(request):
     return render(request, 'process.html')
 def index_page(request):
-    return render(request, 'index.html')
+    context = {"all_comments": Comments.objects.all()}
+    return render(request, 'index.html', context=context)
 def team_page(request):
     return render(request, 'team.html')
 
@@ -30,4 +39,15 @@ def renderQuotes(request):
     }
     time.sleep(10)
     return JsonResponse(jsontext)
+
+def add_comment(request):
+    if request.method =="POST":
+        commenter = request.POST['commenter']
+        comment = request.POST['comment']
+        comment_object = Comments(commenter=commenter, comment=comment)
+        comment_object.save()
+    return HttpResponseRedirect(reverse('index_page'))
+            
+
+
  

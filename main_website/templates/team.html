@@ -18,10 +18,10 @@
 
 {% block content %}
  
-<section id="section2_process" style="height: 240vh; width: 100vw;; position: relative;">
+<section id="section2_members" style="height: 240vh; width: 100vw;; position: relative;">
     <style>
          
-        #section2_process {
+        #section2_members {
         cursor: url("{% static 'img/blackllipsis.png' %}") 16 16, auto !important;
          
     }
@@ -31,12 +31,7 @@
     <script>
         let members = document.getElementsByClassName('individualMember');
         
-        members.forEach(element => {
-             
-            let x = element.getElementsByTagName(img);
-            let an = KUTE.to(x[0],{clip:[0,150,100,0]});
-            an.start();
-        });
+         
         
     </script>
     <div class="members_list m_list_odd">
@@ -45,23 +40,25 @@
             <div class="col-md-4">
                 
             </div>
-            <div class="col-md-4 text">
+            <div class="col-md-4 text animationrise">
                 <h2>Brianna Henriquez-Diaz</h2>
                 <p>brihenri@iu.edu</p>
 
             </div>
-            <div class="col-md-4 flexcenter">
-                <img src="{% static 'img/Brianna.jpg' %}">
+            <div class="col-md-4 flexcenter animationrise">
+                <div class="imgfadein"></div>
+                <img  src="{% static 'img/Brianna.jpg' %}">
             </div>
         </div> 
         <!---->
         <div class="row individualMember">
              
-            <div class="col-md-4 flexcenter">
-                <img src="{% static 'img/Caitlyn.jpg' %}">
+            <div class="col-md-4 flexcenter animationrise">
+                <div class="imgfadein"></div>
+                <img  src="{% static 'img/Caitlyn.jpg' %}">
 
             </div>
-            <div class="col-md-4 text">
+            <div class="col-md-4 text animationrise">
                 <h2>Caitlyn Maas</h2>
                 <p>camaas@iu.edu</p>
             </div>
@@ -76,12 +73,13 @@
             <div class="col-md-4">
                 
             </div>
-            <div class="col-md-4 text">
+            <div class="col-md-4 text animationrise">
                 <h2>Shelia Hernandez</h2>
                 <p>Sheherna@iu.edu</p>
                
             </div>
-            <div class="col-md-4 flexcenter" >
+            <div class="col-md-4 flexcenter animationrise" >
+                <div class="imgfadein"></div>
                 <img src="{% static 'img/Natalie.jpg' %}">
 
             </div>
@@ -91,10 +89,11 @@
 
         <div class="row individualMember">
              
-            <div class="col-md-4 flexcenter">
+            <div class="col-md-4 flexcenter animationrise">
+                <div class="imgfadein" style=""></div>
                 <img src="{% static 'img/Zasha.jpg' %}">                
             </div>
-            <div class="col-md-4 text">
+            <div class="col-md-4 text animationrise">
                 <h2>Zasha Benites</h2>
                 <p>mbenites@iu.edu</p>
                
@@ -111,6 +110,34 @@
     
 
 </section>
+
 <script>
+    let membersSection = document.getElementById('section2_members');
+    let animationsriseMembers = document.getElementsByClassName('animationrise');
+    let fadeInAnimationImages = document.getElementsByClassName('imgfadein');
+    document.addEventListener("scroll", function() {
+        if(inView(membersSection)) {
+                    
+                    Array.from(animationsriseMembers).forEach(element => {
+                        element.classList.add('slow-rise');
+                    });
+                } else {
+                    Array.from(animationsriseMembers).forEach(element => {
+                        element.classList.remove('slow-rise');
+                    });
+                     
+                }
+                Array.from(fadeInAnimationImages).forEach(element => {
+                    if (inView(element)){
+                        element.classList.add('fadeinAn');
+                    } else {
+                        element.classList.remove('fadeinAn');
+                    }
+                    })
+
+
+    })
+    
+            
 </script>
 {% endblock content %}
