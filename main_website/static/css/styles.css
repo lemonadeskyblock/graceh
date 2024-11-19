@@ -491,3 +491,7 @@ img.step-effect {
     margin-left: 2vw;
     border-radius: 35px;
 }
+
+.glasscontainer p {
+    font-family: "Poppins", sans-serif;
+}
