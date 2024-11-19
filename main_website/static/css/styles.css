@@ -165,7 +165,7 @@ h3 {
 @keyframes FadeIn {
     from {
         opacity: 1;
-        
+
         
     }
     to {
@@ -401,7 +401,7 @@ img.step-effect {
     background-color: black;
     position: absolute;
     height: 100%;
-    width: 85%;
+    width: 90%;
     opacity: 0;
 }
 

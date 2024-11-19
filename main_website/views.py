@@ -1,7 +1,7 @@
 from django.shortcuts import render
 from django.urls import reverse
 from . import templates
-from django.http import HttpResponse, HttpResponseRedirect
+from django.http import HttpResponse, HttpResponseRedirect, JsonResponse
 import csv
 from .models import Comments
  
